@@ -1,0 +1,350 @@
+/* Far Cry 1 Theme CSS */
+
+/* Importar a fonte Far Cry */
+@font-face {
+    font-family: 'FarCry';
+    src: url('farcry-fonts/FARCEB__.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f1419 0%, #1a2332 30%, #2d4a3e 70%, #0f1419 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efeito de textura de fundo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(0, 100, 0, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(255, 140, 0, 0.1) 0%, transparent 60%),
+        radial-gradient(circle at 40% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 60%),
+        linear-gradient(45deg, transparent 30%, rgba(0, 50, 0, 0.05) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Cabeçalho principal */
+h1 {
+    font-family: 'FarCry', 'Arial Black', Arial, sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 0;
+    color: #ff8c00;
+    text-shadow: 
+        3px 3px 0px #8b4513,
+        6px 6px 0px #2d4a3e,
+        9px 9px 0px #0f1419,
+        0 0 20px rgba(255, 140, 0, 0.8),
+        0 0 40px rgba(255, 140, 0, 0.4);
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Navegação */
+nav {
+    background: linear-gradient(90deg, rgba(0, 50, 0, 0.95) 0%, rgba(139, 69, 19, 0.95) 50%, rgba(0, 50, 0, 0.95) 100%);
+    border: 1px solid #ff8c00;
+    border-radius: 8px;
+    margin: auto; /*centraliza a navegação horizontalmente*/
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.8), 
+        inset 0 2px 0 rgba(255, 255, 255, 0.2),
+        0 0 15px rgba(255, 140, 0, 0.3);
+    position: relative;
+    width: 70%; /*o tamanho da navegação, vai ter que alterar na responsividade */
+}
+
+nav::before {
+    content: '';
+    position: relative;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ff8c00, #32cd32, #ff8c00, #32cd32);
+    background-size: 400% 400%;
+    border-radius: 11px;
+    z-index: -1;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { 
+        background-position: 0% 50%;
+        opacity: 0.8; 
+    }
+    50% { 
+        background-position: 100% 50%;
+        opacity: 1; 
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+nav li {
+    position: relative;
+}
+
+/* Botões */
+nav a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-family: 'FarCry', 'Arial Black', Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(30, 30, 30, 0.8) 100%);
+    border: 2px solid #666;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+nav a:hover::before {
+    left: 100%;
+}
+
+nav a:hover {
+    color: #ff8c00;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.3) 0%, rgba(50, 205, 50, 0.3) 100%);
+    border-color: #ff8c00;
+    transform: translateY(-3px);
+    box-shadow: 
+        0 6px 12px rgba(255, 140, 0, 0.6),
+        0 0 20px rgba(255, 140, 0, 0.4);
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(255, 140, 0, 0.8);
+}
+
+/* Conteúdo principal */
+h2 {
+    font-family: 'FarCry', 'Arial Black', Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #ff8c00;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    text-shadow: 
+        2px 2px 0px #8b4513,
+        4px 4px 0px #2d4a3e,
+        0 0 15px rgba(255, 140, 0, 0.6);
+    letter-spacing: 3px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ff8c00, #32cd32, #ff8c00, transparent);
+    border-radius: 2px;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin: 1.5rem 2rem;
+    text-align: center;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Efeitos especiais */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(0, 100, 0, 0.05) 3px,
+            rgba(0, 100, 0, 0.05) 6px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 3px,
+            rgba(255, 140, 0, 0.02) 3px,
+            rgba(255, 140, 0, 0.02) 6px
+        );
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Responsividade */
+
+/*Computadores*/
+
+/*Monitor wide 2560x1080*/
+@media (min-width: 2560px) {
+    h1 {
+        font-size: 3.8rem;
+        margin: 1rem 0;
+        letter-spacing: 2px;
+    }
+    
+    nav {
+        width: 75%;
+    }
+    
+    nav a {
+        width: 200px;
+        text-align: center;
+        /*padding: 0.8rem 1.5rem;*/
+        font-size: 1.1rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    p {
+        /*margin: 1rem;*/
+        font-size: 1.1rem;
+    }
+}
+/*--------------------*/
+/*Celulares*/
+
+/* mexer depois*/
+/*@media (max-width: XXXpx) {
+    h1 {
+        font-size: 2.8rem;
+        margin: 1rem 0;
+        letter-spacing: 2px;
+    }
+    
+    nav {
+        margin: 0 1rem 1rem 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    nav a {
+        width: 250px;
+        text-align: center;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    p {
+        margin: 1rem;
+        font-size: 1.1rem;
+    }
+}
+*/
+
+/* Animações adicionais */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, nav, h2, p {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+nav {
+    animation-delay: 0.2s;
+}
+
+h2 {
+    animation-delay: 0.4s;
+}
+
+p {
+    animation-delay: 0.6s;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff8c00, #32cd32);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ffa500, #228b22);
+}
